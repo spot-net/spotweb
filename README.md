@@ -3,6 +3,9 @@ Spotweb is a webbased usenet binary resource indexer based on the protocol and d
 
 Spotweb requires an operational webserver with PHP5 installed, it uses either an MySQL or an PostgreSQL database to store it's contents in. 
 
+## spot-net
+The purpose of this fork is to keep the main branche up-to-date. This is because while there is a refactor available, it is work in progress.
+
 ## Features
 Spotweb is one of the most-featured Spotnet clients currently available, featuring among other things:
 
