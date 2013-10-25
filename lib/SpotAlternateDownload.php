@@ -25,9 +25,20 @@ class SpotAlternateDownload {
 	  
 	  // Array containing url matches. Must contain the first part of the url.
 	  $matches = array(
-	  	'http://base64.derefer.me',
+	    'http://base64.derefer.me',
 	    'http://derefer.me',
+	    'http://www.derefer.me',
 	    'http://alturl.com',
+	    'http://www.alturl.com',
+	    'http://dereferer.org',
+	    'http://www.dereferer.org',
+	    'http://tiny.cc',
+	    'http://www.tiny.cc',
+	    'http://tinyurl.com',
+	    'http://www.tinyurl.com',
+	    'http://hideref.org',
+	    'http://www.hideref.org',
+	    'http://bit.ly',
 	  );
 	  
 	  // Search in the website url
@@ -74,6 +85,12 @@ class SpotAlternateDownload {
 	 */
 	protected function resolveUrl($url, $currentUrl=false, $retries=0) {
 
+      if(strpos($url, 'hideref.org')){
+        $arr = explode('/64/', $url);
+        $tresult = base64_decode($arr[1]);
+        return $tresult;
+      } 
+      
 	  if(!function_exists('curl_init')) {
 	    trigger_error('cURL is needed to resolve alternate download urls.', E_NOTICE);
 	    return $url;
